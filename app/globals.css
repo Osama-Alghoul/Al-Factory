@@ -1,0 +1,135 @@
+/* Font styles will be handled by Next.js font system */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 181 100% 37%;
+  --primary-dark: 186 100% 33%;
+  --secondary: 0 0% 23%;
+  --background: 210 20% 98%;
+  --foreground: 210 20% 13%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 20% 13%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 20% 13%;
+  --muted: 210 20% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 187 70% 54%;
+  --accent-foreground: 210 20% 13%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 187 70% 54%;
+  --radius: 0.5rem;
+  --warning: 36 100% 57%;
+}
+
+.dark {
+  --primary: 181 100% 37%;
+  --primary-dark: 186 100% 33%;
+  --secondary: 0 0% 23%;
+  --background: 210 20% 10%;
+  --foreground: 210 20% 98%;
+  --card: 210 20% 13%;
+  --card-foreground: 210 20% 98%;
+  --popover: 210 20% 13%;
+  --popover-foreground: 210 20% 98%;
+  --muted: 210 20% 16%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 187 70% 44%;
+  --accent-foreground: 210 20% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 210 20% 20%;
+  --input: 210 20% 20%;
+  --ring: 187 70% 44%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .rtl {
+    direction: rtl;
+  }
+
+  .ltr {
+    direction: ltr;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-center;
+  }
+
+  .section-subtitle {
+    @apply text-xl md:text-2xl font-semibold mb-4;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-md transition-all duration-300;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
+.slide-up {
+  opacity: 0;
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.zoom-in {
+  opacity: 0;
+  animation: zoomIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
