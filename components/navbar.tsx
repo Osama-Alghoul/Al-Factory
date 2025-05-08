@@ -6,6 +6,7 @@ import { useLanguage } from "./language-provider"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Moon, Sun, Globe } from "lucide-react"
 import { useTheme } from "next-themes"
+import Image from "next/image"
 
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage()
@@ -52,8 +53,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo Container */}
-          <div className="flex-shrink-0 h-16 w-40 bg-muted/50 flex items-center justify-center rounded border border-border">
-            <span className="text-sm text-muted-foreground">Logo Placeholder</span>
+          <div className="flex-shrink-0 h-16 w-40 flex items-center justify-center">
+            <Image src="/logo-no-bg.jpg" alt="Logo" width={150} height={150} />
           </div>
 
           {/* Desktop Navigation */}
@@ -87,7 +88,6 @@ export default function Navbar() {
             >
               <Globe className="h-5 w-5" />
             </Button>
-            <Button className="bg-primary hover:bg-primary-dark text-white">{t("contact.send")}</Button>
           </div>
 
           {/* Mobile menu button */}
