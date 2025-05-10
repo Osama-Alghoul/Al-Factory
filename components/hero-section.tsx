@@ -1,8 +1,9 @@
 "use client"
 
+import Link from "next/link"
 import { useLanguage } from "./language-provider"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, ChevronLeft } from "lucide-react"
+import { ChevronRight, ChevronLeft} from "lucide-react"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
@@ -48,9 +49,8 @@ export default function HeroSection() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
           >
             <Image src={slide.image || "/placeholder.svg"} alt={slide.alt} fill priority className="object-cover" />
             <div className="absolute inset-0 bg-black/50" />
@@ -63,17 +63,15 @@ export default function HeroSection() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1
-              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${
-                language === "ar" ? "font-arabic-heading" : "font-english"
-              }`}
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 ${language === "ar" ? "font-arabic-heading" : "font-english"
+                }`}
             >
               {t("hero.title")}
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">{t("hero.subtitle")}</p>
-            <Button className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-6 h-auto">
-              {t("hero.cta")}
-              {language === "ar" ? <ChevronLeft className="ms-2 h-5 w-5" /> : <ChevronRight className="ms-2 h-5 w-5" />}
-            </Button>
+              <Link href='/products' className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-6 h-auto rounded-md">
+                {t("hero.cta")}
+              </Link>
           </div>
         </div>
       </div>
@@ -84,9 +82,8 @@ export default function HeroSection() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide ? "bg-primary w-10" : "bg-white/50"
-            }`}
+            className={`w-3 h-3 rounded-full transition-all ${index === currentSlide ? "bg-primary w-10" : "bg-white/50"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
