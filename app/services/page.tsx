@@ -10,7 +10,7 @@ export default function ServicesPage() {
 
   // Set page title based on language
   useEffect(() => {
-    document.title = language === "ar" ? "خدماتنا | مصنع الألمنيوم" : "Our Services | Aluminum Factory"
+    document.title = language === "ar" ? "خدماتنا | UPAL Systems" : "Our Services | UPAL Systems"
   }, [language])
 
   const services = [

@@ -21,6 +21,7 @@ const translations = {
     "hero.title": "الصناعة العربية – UPAL SYSTEMS",
     "hero.subtitle": "نقدم أفضل منتجات الألمنيوم بجودة عالية",
     "hero.cta": "تعرف على منتجاتنا",
+    "hero.certified" : "الموثقون والمعتمدون لدى",
     "about.title": "من نحن",
     "about.description":
       "نحن شركة رائدة في مجال تصنيع الألمنيوم بخبرة تزيد عن 20 عامًا. نلتزم بتقديم منتجات عالية الجودة تلبي احتياجات عملائنا.",
@@ -62,6 +63,7 @@ const translations = {
     "hero.title": "Arabian Industry UPAL SYSTEMS",
     "hero.subtitle": "We provide the best quality aluminum products",
     "hero.cta": "Explore Our Products",
+    "hero.certified" : "Trusted and approved by",
     "about.title": "About Us",
     "about.description":
       "We are a leading aluminum manufacturing company with over 20 years of experience. We are committed to providing high-quality products that meet our customers' needs.",

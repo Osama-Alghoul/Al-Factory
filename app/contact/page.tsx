@@ -11,7 +11,7 @@ export default function ContactPage() {
 
   // Set page title based on language
   useEffect(() => {
-    document.title = language === "ar" ? "اتصل بنا | مصنع الألمنيوم" : "Contact Us | Aluminum Factory"
+    document.title = language === "ar" ? "اتصل بنا | UPAL Systems" : "Contact Us | UPAL Systems"
   }, [language])
 
   return (

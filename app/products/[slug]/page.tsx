@@ -172,7 +172,7 @@ export default function ProductDetailPage() {
   useEffect(() => {
     if (product) {
       document.title =
-        language === "ar" ? `${product.title_ar} | مصنع الألمنيوم` : `${product.title_en} | Aluminum Factory`
+        language === "ar" ? `${product.title_ar} | UPAL Systems` : `${product.title_en} | UPAL Systems`
     }
   }, [language, product])
 

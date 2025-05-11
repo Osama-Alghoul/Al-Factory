@@ -10,7 +10,7 @@ export default function ClientsPage() {
 
   // Set page title based on language
   useEffect(() => {
-    document.title = language === "ar" ? "عملاؤنا | مصنع الألمنيوم" : "Our Clients | Aluminum Factory"
+    document.title = language === "ar" ? "عملاؤنا | UPAL Systems" : "Our Clients | UPAL Systems"
   }, [language])
 
   const clients = [

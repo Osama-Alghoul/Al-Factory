@@ -9,7 +9,7 @@ export default function CompanyPage() {
 
   // Set page title based on language
   useEffect(() => {
-    document.title = language === "ar" ? "الشركة | مصنع الألمنيوم" : "Company | Aluminum Factory"
+    document.title = language === "ar" ? "الشركة | UPAL Systems" : "Company | UPAL Systems"
   }, [language])
 
   return (
@@ -25,13 +25,8 @@ export default function CompanyPage() {
             </h2>
             <p className="text-muted-foreground mb-4">
               {language === "ar"
-                ? "نحن شركة رائدة في مجال تصنيع الألمنيوم بخبرة تزيد عن 20 عامًا. نلتزم بتقديم منتجات عالية الجودة تلبي احتياجات عملائنا."
+                ? "UPAL لمنتجات الألمنيوم والـuPVC ولدت عملاقة لتكون صرحاً راسخاً في عالم البناء المتطور باستمرار بما تقدمه من منتجات الأبواب والنوافذ وقطاعات الألمنيوم والـuPVC في جوده متقنه وحرص على رضا عملائنا الكرم حيث تعمل على تأسيس ثقة تتعزز بكم ملبية رغباتكم بتقديم الأحدث والأكثر تطوراً وبعد سنوات من تأسيسها _ بمدينة جدة _ المملكة العربية السعودية _ نستطيع أن نقول بأننا على باب انطلاقه رحبة تواكب كل ما يستجد من تحديث وتطور في صناعة الألمنيوم والـuPVC وتأكيداً لمبدأ خدمة العميل وتلبية متطلباته قامت UPAL باستخدام أنماط وأشكال جديدة من هذه الصناعة لتناسب جميع الأذواق، مع الحفاظ على الجودة المعتادة وذلك باستخدام أحدث الأجهزة والأدوات. إضافة إلى الفنيين المدربين ذوي الخبرات في هذا المجال وعلى استخدام هذه الأجهزة الدقيقة للخروج بالمنتجات على حسب المقاييس والمواصفات التي يطلبها العميل"
                 : "We are a leading aluminum manufacturing company with over 20 years of experience. We are committed to providing high-quality products that meet our customers' needs."}
-            </p>
-            <p className="text-muted-foreground mb-4">
-              {language === "ar"
-                ? "تأسست الشركة في عام 2000، وقد نمت لتصبح واحدة من أكبر مصنعي الألمنيوم في المنطقة. نحن نفخر بتقديم منتجات ذات جودة عالية وخدمة ممتازة لعملائنا."
-                : "The company was founded in 2000 and has grown to become one of the largest aluminum manufacturers in the region. We pride ourselves on providing high-quality products and excellent service to our customers."}
             </p>
           </div>
           <div className="bg-muted rounded-lg h-64 flex items-center justify-center">

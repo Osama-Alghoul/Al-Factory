@@ -3,6 +3,7 @@
 import { useLanguage } from "@/components/language-provider"
 import HeroSection from "@/components/hero-section"
 import ProductsSection from "@/components/products-section"
+import CertifiedBy from "@/components/certified-by"
 import ServicesSection from "@/components/services-section"
 import ClientsSection from "@/components/clients-section"
 import ContactSection from "@/components/contact-section"
@@ -14,7 +15,7 @@ export default function Home() {
 
   // Set page title based on language
   useEffect(() => {
-    document.title = language === "ar" ? "مصنع الألمنيوم | الصفحة الرئيسية" : "Aluminum Factory | Home"
+    document.title = language === "ar" ? "UPAL Systems | الصفحة الرئيسية" : "UPAL Systems | Home"
   }, [language])
 
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <StatsSection />
       <ProductsSection />
       <ServicesSection />
+      <CertifiedBy />
       <ClientsSection />
       <ContactSection />
       <Footer />

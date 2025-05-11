@@ -54,7 +54,7 @@ export default function Navbar() {
         <div className="flex justify-between h-20 items-center">
           {/* Logo Container */}
           <div className="flex-shrink-0 h-16 w-40 flex items-center justify-center">
-            <Image src="/logo-no-bg.jpg" alt="Logo" width={150} height={150} />
+            <Image src="/logo-no-bg.jpg" alt="Logo" width={200} height={200} />
           </div>
 
           {/* Desktop Navigation */}

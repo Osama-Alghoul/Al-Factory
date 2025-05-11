@@ -12,7 +12,7 @@ export default function ProductsPage() {
 
   // Set page title based on language
   useEffect(() => {
-    document.title = language === "ar" ? "منتجاتنا | مصنع الألمنيوم" : "Our Products | Aluminum Factory"
+    document.title = language === "ar" ? "منتجاتنا | UPAL Systems" : "Our Products | UPAL Systems"
   }, [language])
 
   const products = [
