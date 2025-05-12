@@ -22,10 +22,10 @@ export default function CertifiedBy() {
                 {t("hero.certified")}
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-20">
-                <Image src='/EducationMins.png' alt="وزارة التعليم" height='200' width='200' />
-                <Image src='/EducationMins.png' alt="وزارة التعليم" height='200' width='200' />
-                <Image src='/EducationMins.png' alt="وزارة التعليم" height='200' width='200' />
-                <Image src='/EducationMins.png' alt="وزارة التعليم" height='200' width='200' />
+                <Image src='/EducationMins.jpg' alt="وزارة التعليم" height='200' width='200' />
+                <Image src='/civil-defence.jpg' alt="الدفاع المدني" height='200' width='200' />
+                <Image src='/ministry.jpg' alt="وزارة الداخلية" height='200' width='200' />
+                <Image src='/sabic.jpg' alt="سابك" height='200' width='200' />
             </div>
         </div>
     )

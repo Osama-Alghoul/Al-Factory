@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "./language-provider"
-import { Twitter, Facebook, Instagram } from "lucide-react"
+import { Instagram } from "lucide-react"
 
 export default function Footer() {
   const { t, language } = useLanguage()
@@ -15,13 +15,7 @@ export default function Footer() {
               {t("follow")}
             </h3>
             <div className="flex space-x-4 rtl:space-x-reverse">
-              <a href="#" className="hover:text-primary transition-colors">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/upal.systems/" target="_blank" className="hover:text-primary transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
             </div>

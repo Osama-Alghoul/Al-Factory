@@ -50,7 +50,7 @@ const translations = {
     "footer.rights": "جميع الحقوق محفوظة",
     "footer.address": "العنوان: طريق المدينه النازل، جدة السعودية",
     "footer.phone": "الهاتف: 920029291",
-    "footer.email": "البريد الإلكتروني: info@aluminumfactory.com",
+    "footer.email": "البريد الإلكتروني: info@arabian-industry.com",
     follow: "تابعنا",
   },
   en: {
@@ -92,7 +92,7 @@ const translations = {
     "footer.rights": "All Rights Reserved",
     "footer.address": "Address: Southbound Madinah Road, Jeddah, Saudi Arabia",
     "footer.phone": "Phone: 920029291",
-    "footer.email": "Email: info@aluminumfactory.com",
+    "footer.email": "Email: info@arabian-industry.com",
     follow: "Follow Us",
   },
 }

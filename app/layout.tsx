@@ -58,7 +58,7 @@ const ibmPlexSansArabic = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "مصنع الألمنيوم | Aluminum Factory",
+  title: "الصناعات العربية | UPAL Systems",
   description: "موقع مصنع الألمنيوم المتخصص في تصنيع منتجات الألمنيوم عالية الجودة",
     generator: 'v0.dev'
 }
