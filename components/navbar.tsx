@@ -1,39 +1,41 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { useLanguage } from "./language-provider"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Moon, Sun, Globe } from "lucide-react"
-import { useTheme } from "next-themes"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useLanguage } from "./language-provider";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Moon, Sun, Globe } from "lucide-react";
+import { useTheme } from "next-themes";
+import Image from "next/image";
 
 export default function Navbar() {
-  const { language, setLanguage, t } = useLanguage()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { language, setLanguage, t } = useLanguage();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   const toggleLanguage = () => {
-    setLanguage(language === "ar" ? "en" : "ar")
-  }
+    setLanguage(language === "ar" ? "en" : "ar");
+  };
 
   const navLinks = [
     { href: "/", label: t("home") },
@@ -42,12 +44,39 @@ export default function Navbar() {
     { href: "/services", label: t("services") },
     { href: "/clients", label: t("clients") },
     { href: "/contact", label: t("contact") },
-  ]
+  ];
+
+  if (!mounted) {
+    return (
+      <nav
+        className={`fixed w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-background/95 backdrop-blur-sm shadow-md"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20 items-center">
+            <div className="flex-shrink-0 h-16 w-40 flex items-center justify-center">
+              <Image
+                src="/logo-no-bg.jpg"
+                alt="Logo"
+                width={200}
+                height={200}
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-sm shadow-md" : "bg-transparent"
+        scrolled
+          ? "bg-background/95 backdrop-blur-sm shadow-md"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,15 +105,25 @@ export default function Navbar() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+              aria-label={
+                theme === "light"
+                  ? "Switch to dark mode"
+                  : "Switch to light mode"
+              }
             >
-              {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+              {theme === "light" ? (
+                <Moon className="h-5 w-5" />
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
             </Button>
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleLanguage}
-              aria-label={language === "ar" ? "Switch to English" : "التبديل إلى العربية"}
+              aria-label={
+                language === "ar" ? "Switch to English" : "التبديل إلى العربية"
+              }
             >
               <Globe className="h-5 w-5" />
             </Button>
@@ -96,20 +135,39 @@ export default function Navbar() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+              aria-label={
+                theme === "light"
+                  ? "Switch to dark mode"
+                  : "Switch to light mode"
+              }
             >
-              {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+              {theme === "light" ? (
+                <Moon className="h-5 w-5" />
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
             </Button>
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleLanguage}
-              aria-label={language === "ar" ? "Switch to English" : "التبديل إلى العربية"}
+              aria-label={
+                language === "ar" ? "Switch to English" : "التبديل إلى العربية"
+              }
             >
               <Globe className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -130,11 +188,13 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-2">
-              <Button className="w-full bg-primary hover:bg-primary-dark text-white">{t("contact.send")}</Button>
+              <Button className="w-full bg-primary hover:bg-primary-dark text-white">
+                {t("contact.send")}
+              </Button>
             </div>
           </div>
         </div>
       )}
     </nav>
-  )
+  );
 }
