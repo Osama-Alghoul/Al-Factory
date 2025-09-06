@@ -49,8 +49,8 @@ const translations = {
     "contact.send": "إرسال",
     "footer.rights": "جميع الحقوق محفوظة",
     "footer.address": "العنوان: طريق المدينه النازل، جدة السعودية",
-    "footer.phone": "الهاتف: 920029291",
-    "footer.email": "البريد الإلكتروني: info@arabian-industry.com",
+    "footer.phone": "الهاتف:",
+    "footer.email": "البريد الإلكتروني:",
     follow: "تابعنا",
   },
   en: {
@@ -91,8 +91,8 @@ const translations = {
     "contact.send": "Send",
     "footer.rights": "All Rights Reserved",
     "footer.address": "Address: Southbound Madinah Road, Jeddah, Saudi Arabia",
-    "footer.phone": "Phone: 920029291",
-    "footer.email": "Email: info@arabian-industry.com",
+    "footer.phone": "Phone:",
+    "footer.email": "Email:",
     follow: "Follow Us",
   },
 }

@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
-import { useLanguage } from "@/components/language-provider"
-import { useRouter, useParams } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, ArrowRight } from "lucide-react"
-import Image from "next/image"
-import Footer from "@/components/footer"
-import { useEffect } from "react"
+import { useLanguage } from "@/components/language-provider";
+import { useRouter, useParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Footer from "@/components/footer";
+import { useEffect } from "react";
+import Link from "next/link";
 
 // Sample product data - in a real app, this would come from a database or API
 const products = [
@@ -44,7 +45,8 @@ const products = [
     id: 2,
     title_ar: "أبواب ألمنيوم",
     title_en: "Aluminum Doors",
-    description_ar: "أبواب ألمنيوم متينة وعصرية بمقاسات وتصاميم متنوعة. تجمع أبوابنا بين الجمال والمتانة والأمان.",
+    description_ar:
+      "أبواب ألمنيوم متينة وعصرية بمقاسات وتصاميم متنوعة. تجمع أبوابنا بين الجمال والمتانة والأمان.",
     description_en:
       "Durable and modern aluminum doors with various sizes and designs. Our doors combine beauty, durability, and security.",
     features_ar: [
@@ -103,7 +105,8 @@ const products = [
     id: 4,
     title_ar: "مطابخ ألمنيوم",
     title_en: "Aluminum Kitchens",
-    description_ar: "مطابخ ألمنيوم عصرية وعملية بتصاميم مختلفة. تجمع مطابخنا بين الجمال والمتانة وسهولة التنظيف.",
+    description_ar:
+      "مطابخ ألمنيوم عصرية وعملية بتصاميم مختلفة. تجمع مطابخنا بين الجمال والمتانة وسهولة التنظيف.",
     description_en:
       "Modern and practical aluminum kitchens with various designs. Our kitchens combine beauty, durability, and ease of cleaning.",
     features_ar: [
@@ -132,7 +135,8 @@ const products = [
     id: 5,
     title_ar: "درابزينات",
     title_en: "Railings",
-    description_ar: "درابزينات ألمنيوم أنيقة ومتينة للشرفات والسلالم. تجمع درابزيناتنا بين الجمال والمتانة والأمان.",
+    description_ar:
+      "درابزينات ألمنيوم أنيقة ومتينة للشرفات والسلالم. تجمع درابزيناتنا بين الجمال والمتانة والأمان.",
     description_en:
       "Elegant and durable aluminum railings for balconies and stairs. Our railings combine beauty, durability, and safety.",
     features_ar: [
@@ -149,41 +153,48 @@ const products = [
       "Easy to clean and maintain",
       "Multiple options of colors and finishes",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/our_products/Al-stairs.jpg?height=600&width=800",
     gallery: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "/our_products/stairs_slug/stairs1.jpg?height=600&width=800",
+      "/our_products/stairs_slug/stairs2.jpg?height=600&width=800",
+      "/our_products/stairs_slug/stairs3.jpg?height=600&width=800",
     ],
     slug: "railings",
   },
-]
+];
 
 export default function ProductDetailPage() {
-  const { language } = useLanguage()
-  const router = useRouter()
-  const params = useParams()
-  const slug = params.slug as string
+  const { language } = useLanguage();
+  const router = useRouter();
+  const params = useParams();
+  const slug = params.slug as string;
 
   // Find the product by slug
-  const product = products.find((p) => p.slug === slug)
+  const product = products.find((p) => p.slug === slug);
 
   // Set page title based on language and product
   useEffect(() => {
     if (product) {
       document.title =
-        language === "ar" ? `${product.title_ar} | UPAL Systems` : `${product.title_en} | UPAL Systems`
+        language === "ar"
+          ? `${product.title_ar} | UPAL Systems`
+          : `${product.title_en} | UPAL Systems`;
     }
-  }, [language, product])
+  }, [language, product]);
 
   // If product not found
   if (!product) {
     return (
       <div className="section-container pt-20 text-center">
-        <h1 className={`section-title ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+        <h1
+          className={`section-title ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+        >
           {language === "ar" ? "المنتج غير موجود" : "Product Not Found"}
         </h1>
-        <Button onClick={() => router.push("/products")} className="mt-4 bg-primary hover:bg-primary-dark text-white">
+        <Button
+          onClick={() => router.push("/products")}
+          className="mt-4 bg-primary hover:bg-primary-dark text-white"
+        >
           {language === "ar" ? (
             <>
               <ArrowRight className="mr-2 h-4 w-4" />
@@ -197,14 +208,18 @@ export default function ProductDetailPage() {
           )}
         </Button>
       </div>
-    )
+    );
   }
 
   return (
     <main className="pt-20">
       <div className="section-container">
         {/* Back button */}
-        <Button onClick={() => router.push("/products")} variant="outline" className="mb-6">
+        <Button
+          onClick={() => router.push("/products")}
+          variant="outline"
+          className="mb-6"
+        >
           {language === "ar" ? (
             <>
               <ArrowRight className="mr-2 h-4 w-4" />
@@ -229,36 +244,51 @@ export default function ProductDetailPage() {
             />
           </div>
           <div>
-            <h1 className={`text-3xl font-bold mb-4 ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+            <h1
+              className={`text-3xl font-bold mb-4 ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+            >
               {language === "ar" ? product.title_ar : product.title_en}
             </h1>
             <p className="text-muted-foreground mb-6">
-              {language === "ar" ? product.description_ar : product.description_en}
+              {language === "ar"
+                ? product.description_ar
+                : product.description_en}
             </p>
 
-            <h2 className={`text-xl font-semibold mb-3 ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+            <h2
+              className={`text-xl font-semibold mb-3 ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+            >
               {language === "ar" ? "المميزات" : "Features"}
             </h2>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-6">
-              {(language === "ar" ? product.features_ar : product.features_en).map((feature, index) => (
+              {(language === "ar"
+                ? product.features_ar
+                : product.features_en
+              ).map((feature, index) => (
                 <li key={index}>{feature}</li>
               ))}
             </ul>
-
-            <Button className="bg-primary hover:bg-primary-dark text-white">
-              {language === "ar" ? "طلب عرض سعر" : "Request a Quote"}
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-primary hover:bg-primary-dark text-white">
+                {language === "ar" ? "طلب عرض سعر" : "Request a Quote"}
+              </Button>
+            </Link>
           </div>
         </div>
 
         {/* Product gallery */}
         <div className="mt-12">
-          <h2 className={`text-2xl font-bold mb-6 ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+          <h2
+            className={`text-2xl font-bold mb-6 ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+          >
             {language === "ar" ? "معرض الصور" : "Gallery"}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {product.gallery.map((image, index) => (
-              <div key={index} className="relative h-64 rounded-lg overflow-hidden">
+              <div
+                key={index}
+                className="relative h-64 rounded-lg overflow-hidden"
+              >
                 <Image
                   src={image || "/placeholder.svg"}
                   alt={`${language === "ar" ? product.title_ar : product.title_en} - ${index + 1}`}
@@ -272,5 +302,5 @@ export default function ProductDetailPage() {
       </div>
       <Footer />
     </main>
-  )
+  );
 }

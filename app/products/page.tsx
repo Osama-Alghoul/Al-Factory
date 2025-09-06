@@ -22,7 +22,7 @@ export default function ProductsPage() {
       title_en: "Aluminum Windows",
       description_ar: "نوافذ ألمنيوم عالية الجودة بتصاميم مختلفة تناسب جميع الاحتياجات.",
       description_en: "High-quality aluminum windows with various designs to suit all needs.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/our_products/Al-windows.png?height=600&width=800",
       slug: "aluminum-windows",
     },
     {
@@ -58,7 +58,7 @@ export default function ProductsPage() {
       title_en: "Railings",
       description_ar: "درابزينات ألمنيوم أنيقة ومتينة للشرفات والسلالم.",
       description_en: "Elegant and durable aluminum railings for balconies and stairs.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/our_products/Al-stairs.jpg?height=600&width=800",
       slug: "railings",
     },
     {
