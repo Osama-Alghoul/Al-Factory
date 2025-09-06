@@ -92,7 +92,6 @@
   animation-fill-mode: forwards;
 }
 
-
 .slide-up {
   opacity: 0;
   animation: slideUp 0.8s ease-in-out forwards;
@@ -131,5 +130,31 @@
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+.animate-scroll-logos {
+  animation: scroll-left 10s linear infinite;
+}
+
+.animate-scroll-logos-reverse {
+  animation: scroll-right 10s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }

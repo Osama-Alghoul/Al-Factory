@@ -9,15 +9,15 @@ import Image from "next/image"
 
 const slides = [
   {
-    image: "/placeholder.svg?height=1080&width=1920",
+    image: "/hero_section/main3.webp?height=1080&width=1920",
     alt: "Aluminum Factory Showcase 1",
   },
   {
-    image: "/placeholder.svg?height=1080&width=1920",
+    image: "/hero_section/main2.jpg?height=1080&width=1920",
     alt: "Aluminum Factory Showcase 2",
   },
   {
-    image: "/placeholder.svg?height=1080&width=1920",
+    image: "/hero_section/main1.jpg?height=1080&width=1920",
     alt: "Aluminum Factory Showcase 3",
   },
 ]
