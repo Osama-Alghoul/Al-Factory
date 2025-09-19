@@ -33,7 +33,7 @@ const products = [
       "Easy to clean and maintain",
       "High durability and long lifespan",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/our_products/Al-windows.png?height=600&width=800",
     gallery: [
       "/placeholder.svg?height=600&width=800",
       "/placeholder.svg?height=600&width=800",
@@ -95,9 +95,9 @@ const products = [
     ],
     image: "/our_products/Al-Glass-Facades.jpg?height=600&width=800",
     gallery: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "/our_products/glass-facads/Glass-Facades1.jpg?height=600&width=800",
+      "/our_products/glass-facads/Glass-Facades2.jpg?height=600&width=800",
+      "/our_products/glass-facads/Glass-Facades3.jpg?height=600&width=800",
     ],
     slug: "glass-facades",
   },
