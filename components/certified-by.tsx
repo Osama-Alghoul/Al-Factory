@@ -29,10 +29,10 @@ export default function CertifiedBy() {
         {t("hero.certified")}
       </h3>
       {/* This parent div acts as the viewport */}
-      <div className="w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden py-4 rounded-lg shadow-xl">
         {/* This inner div is what animates */}
         <div
-          className={`flex gap-14 min-w-fit flex-nowrap ${language === "ar" ? "animate-scroll-logos" : "animate-scroll-logos-reverse"}`}
+          className={`logo-track ${language === "ar" ? "logo-track-animation-ar" : "logo-track-animation-en" }`}
         >
           {logos.map((logo, index) => (
             <Image
@@ -41,7 +41,7 @@ export default function CertifiedBy() {
               height="250"
               width="250"
               key={`original-${index}`}
-              className="rounded-full"
+              className="rounded-full logo-item"
             />
           ))}
           {logos.map((logo, index) => (
@@ -51,7 +51,7 @@ export default function CertifiedBy() {
               height="250"
               width="250"
               key={`dup-${index}`}
-              className="rounded-full"
+              className="rounded-full logo-item"
             />
           ))}
         </div>

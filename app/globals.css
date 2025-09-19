@@ -133,28 +133,71 @@
   }
 }
 
-.animate-scroll-logos {
-  animation: scroll-left 10s linear infinite;
+.partner-carousel-container {
+  width: 100%;
+  max-width: 1200px;
 }
 
-.animate-scroll-logos-reverse {
-  animation: scroll-right 10s linear infinite;
+.logo-track {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes scroll-left {
+.logo-track-animation-ar {
+  animation: scroll-logos 25s linear infinite;
+}
+
+.logo-track-animation-en {
+  animation: scroll-logos-revers 25s linear infinite;
+}
+
+.logo-item {
+  flex-shrink: 0; /* Prevents logos from shrinking */
+  width: 25%; /* Each logo takes up 25% of the container width (4 logos visible) */
+  padding: 0 1.5rem; /* Horizontal spacing between logos */
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.logo-item:hover {
+  opacity: 1;
+}
+
+.logo-item img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.logo-item:hover img {
+  filter: grayscale(0%);
+}
+
+/* The keyframes for the infinite horizontal scroll */
+@keyframes scroll-logos {
   0% {
+    transform: translateX(0);
+  }
+  100% {
     transform: translateX(100%);
   }
+}
+
+@keyframes scroll-logos-revers {
+  0% {
+    transform: translateX(0);
+  }
   100% {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 }
 
-@keyframes scroll-right {
-  0% {
-    transform: translateX(-100%);
+@media (max-width: 768px) {
+  .logo-item {
+    width: 50%; /* On smaller screens, show 2 logos at a time */
   }
-  100% {
-    transform: translateX(0%);
+  .logo-track {
+    animation-duration: 15s;
   }
 }
