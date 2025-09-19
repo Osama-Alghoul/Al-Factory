@@ -34,8 +34,23 @@ export default function Footer() {
               {t("contact.title")}
             </h3>
             <p className="text-muted-foreground">{t("footer.address")}</p>
-            <p className="text-muted-foreground">{t("footer.phone")}</p>
-            <p className="text-muted-foreground">{t("footer.email")}</p>
+            <p className="text-muted-foreground">
+              {t("footer.phone")}{" "}
+              <a href="tel:+966920029291" className="text-primary">
+                {" "}
+                +966920029291
+              </a>
+            </p>
+            <p className="text-muted-foreground">
+              {t("footer.email")}{" "}
+              <a
+                href="mailto:info@arabian-industry.com"
+                className="text-primary"
+              >
+                {" "}
+                info@arabian-industry.com
+              </a>
+            </p>
           </div>
         </div>
 

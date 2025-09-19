@@ -52,7 +52,7 @@ export default function Navbar() {
         className={`fixed w-full z-50 transition-all duration-300 ${
           scrolled
             ? "bg-background/95 backdrop-blur-sm shadow-md"
-            : "bg-transparent"
+            : "bg-background/95 backdrop-blur-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +76,7 @@ export default function Navbar() {
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-background/95 backdrop-blur-sm shadow-md"
-          : "bg-transparent"
+          : "bg-background/95 backdrop-blur-sm opacity-80"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

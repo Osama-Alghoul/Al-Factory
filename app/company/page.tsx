@@ -1,41 +1,50 @@
-"use client"
+"use client";
 
-import { useLanguage } from "@/components/language-provider"
-import Footer from "@/components/footer"
-import { useEffect } from "react"
+import { useLanguage } from "@/components/language-provider";
+import Footer from "@/components/footer";
+import { useEffect } from "react";
 
 export default function CompanyPage() {
-  const { t, language } = useLanguage()
+  const { t, language } = useLanguage();
 
   // Set page title based on language
   useEffect(() => {
-    document.title = language === "ar" ? "الشركة | UPAL Systems" : "Company | UPAL Systems"
-  }, [language])
+    document.title =
+      language === "ar" ? "الشركة | UPAL Systems" : "Company | UPAL Systems";
+  }, [language]);
 
   return (
     <main className="pt-20">
       <div className="section-container">
-        <h1 className={`section-title ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+        <h1
+          className={`section-title ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+        >
           {language === "ar" ? "الشركة" : "Company"}
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div>
-            <h2 className={`section-subtitle ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+            <h2
+              className={`section-subtitle ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+            >
               {t("about.title")}
             </h2>
             <p className="text-muted-foreground mb-4">
               {language === "ar"
                 ? "UPAL لمنتجات الألمنيوم والـuPVC ولدت عملاقة لتكون صرحاً راسخاً في عالم البناء المتطور باستمرار بما تقدمه من منتجات الأبواب والنوافذ وقطاعات الألمنيوم والـuPVC في جوده متقنه وحرص على رضا عملائنا الكرم حيث تعمل على تأسيس ثقة تتعزز بكم ملبية رغباتكم بتقديم الأحدث والأكثر تطوراً وبعد سنوات من تأسيسها _ بمدينة جدة _ المملكة العربية السعودية _ نستطيع أن نقول بأننا على باب انطلاقه رحبة تواكب كل ما يستجد من تحديث وتطور في صناعة الألمنيوم والـuPVC وتأكيداً لمبدأ خدمة العميل وتلبية متطلباته قامت UPAL باستخدام أنماط وأشكال جديدة من هذه الصناعة لتناسب جميع الأذواق، مع الحفاظ على الجودة المعتادة وذلك باستخدام أحدث الأجهزة والأدوات. إضافة إلى الفنيين المدربين ذوي الخبرات في هذا المجال وعلى استخدام هذه الأجهزة الدقيقة للخروج بالمنتجات على حسب المقاييس والمواصفات التي يطلبها العميل"
-                : "We are a leading aluminum manufacturing company with over 20 years of experience. We are committed to providing high-quality products that meet our customers' needs."}
+                : "UPAL for aluminum and uPVC products was born a giant to become a solid landmark in the ever-evolving world of construction. We offer doors, windows, and aluminum and uPVC profiles with exquisite quality and a commitment to our valued customers' satisfaction. We work to build a trust that grows with you, meeting your desires by providing the latest and most advanced products. After years of being founded in Jeddah, Saudi Arabia, we can say that we are on the verge of a broad launch, keeping pace with every new update and development in the aluminum and uPVC industry. To reaffirm our principle of customer service and meeting their requirements, UPAL has introduced new styles and shapes in this industry to suit all tastes while maintaining the usual quality by using the latest equipment and tools. This is in addition to our experienced and well-trained technicians who use this precise equipment to produce products that meet the measurements and specifications requested by the customer."}
             </p>
           </div>
           <div className="bg-muted rounded-lg h-64 flex items-center justify-center">
-            <span className="text-muted-foreground">{language === "ar" ? "صورة الشركة" : "Company Image"}</span>
+            <span className="text-muted-foreground">
+              {language === "ar" ? "صورة الشركة" : "Company Image"}
+            </span>
           </div>
         </div>
 
         <div className="mt-12">
-          <h2 className={`section-subtitle ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+          <h2
+            className={`section-subtitle ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+          >
             {language === "ar" ? "رؤيتنا" : "Our Vision"}
           </h2>
           <p className="text-muted-foreground mb-4">
@@ -46,7 +55,9 @@ export default function CompanyPage() {
         </div>
 
         <div className="mt-8">
-          <h2 className={`section-subtitle ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+          <h2
+            className={`section-subtitle ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+          >
             {language === "ar" ? "مهمتنا" : "Our Mission"}
           </h2>
           <p className="text-muted-foreground mb-4">
@@ -57,7 +68,9 @@ export default function CompanyPage() {
         </div>
 
         <div className="mt-8">
-          <h2 className={`section-subtitle ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+          <h2
+            className={`section-subtitle ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+          >
             {language === "ar" ? "قيمنا" : "Our Values"}
           </h2>
           <ul className="list-disc list-inside space-y-2 text-muted-foreground">
@@ -91,5 +104,5 @@ export default function CompanyPage() {
       </div>
       <Footer />
     </main>
-  )
+  );
 }

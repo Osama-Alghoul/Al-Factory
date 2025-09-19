@@ -41,6 +41,7 @@ export default function CertifiedBy() {
               height="250"
               width="250"
               key={`original-${index}`}
+              className="rounded-full"
             />
           ))}
           {logos.map((logo, index) => (
@@ -50,6 +51,7 @@ export default function CertifiedBy() {
               height="250"
               width="250"
               key={`dup-${index}`}
+              className="rounded-full"
             />
           ))}
         </div>
