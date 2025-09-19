@@ -1,63 +1,18 @@
-"use client"
+"use client";
 
-import { useLanguage } from "./language-provider"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, ChevronLeft } from "lucide-react"
-import Image from "next/image"
-import { useRef, useEffect } from "react"
-import Link from "next/link"
+import { useLanguage } from "./language-provider";
+import { Button } from "@/components/ui/button";
+import { ChevronRight, ChevronLeft } from "lucide-react";
+import Image from "next/image";
+import { useRef, useEffect } from "react";
+import Link from "next/link";
+import { products } from "./products-list";
 
-const products = [
-  {
-    id: 1,
-    title_ar: "نوافذ ألمنيوم",
-    title_en: "Aluminum Windows",
-    image: "/our_products/Al-windows.png?height=600&width=800",
-    alt_ar: "نوافذ ألمنيوم",
-    alt_en: "Aluminum Windows",
-    slug: "aluminum-windows",
-  },
-  {
-    id: 2,
-    title_ar: "أبواب ألمنيوم",
-    title_en: "Aluminum Doors",
-    image: "/placeholder.svg?height=600&width=800",
-    alt_ar: "أبواب ألمنيوم",
-    alt_en: "Aluminum Doors",
-    slug: "aluminum-doors",
-  },
-  {
-    id: 3,
-    title_ar: "واجهات زجاجية",
-    title_en: "Glass Facades",
-    image: "/placeholder.svg?height=600&width=800",
-    alt_ar: "واجهات زجاجية",
-    alt_en: "Glass Facades",
-    slug: "glass-facades",
-  },
-  {
-    id: 4,
-    title_ar: "مطابخ ألمنيوم",
-    title_en: "Aluminum Kitchens",
-    image: "/placeholder.svg?height=600&width=800",
-    alt_ar: "مطابخ ألمنيوم",
-    alt_en: "Aluminum Kitchens",
-    slug: "aluminum-kitchens",
-  },
-  {
-    id: 5,
-    title_ar: "درابزينات",
-    title_en: "Railings",
-    image: "/our_products/Al-stairs.jpg?height=600&width=800",
-    alt_ar: "درابزينات",
-    alt_en: "Railings",
-    slug: "railings",
-  },
-]
+const products_sample = products.slice(0, 5);
 
 export default function ProductsSection() {
-  const { language } = useLanguage()
-  const containerRef = useRef<HTMLDivElement>(null)
+  const { language } = useLanguage();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Intersection Observer for animation - Fixed to prevent double animation
   useEffect(() => {
@@ -67,34 +22,36 @@ export default function ProductsSection() {
           if (entry.isIntersecting) {
             // Only add the animation class if it doesn't already have it
             if (!entry.target.classList.contains("fade-in")) {
-              entry.target.classList.add("fade-in")
-              entry.target.classList.remove("opacity-0")
+              entry.target.classList.add("fade-in");
+              entry.target.classList.remove("opacity-0");
               // Unobserve after animation is added to prevent multiple animations
-              observer.unobserve(entry.target)
+              observer.unobserve(entry.target);
             }
           }
-        })
+        });
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
-    const productElements = document.querySelectorAll(".product-item")
+    const productElements = document.querySelectorAll(".product-item");
     productElements.forEach((el) => {
       // Only observe elements that don't already have the animation class
       if (!el.classList.contains("fade-in")) {
-        observer.observe(el)
+        observer.observe(el);
       }
-    })
+    });
 
     return () => {
-      productElements.forEach((el) => observer.unobserve(el))
-    }
-  }, [])
+      productElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
 
   return (
     <section className="section-container bg-muted/30">
       <div className="text-center mb-12">
-        <h2 className={`section-title ${language === "ar" ? "font-arabic-heading" : "font-english"}`}>
+        <h2
+          className={`section-title ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
+        >
           {language === "ar" ? "منتجاتنا" : "Our Products"}
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -104,8 +61,11 @@ export default function ProductsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref={containerRef}>
-        {products.map((product, index) => (
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        ref={containerRef}
+      >
+        {products_sample.map((product, index) => (
           <Link
             key={product.id}
             href={`/products/${product.slug}`}
@@ -115,7 +75,7 @@ export default function ProductsSection() {
             <div className="relative h-64 overflow-hidden">
               <Image
                 src={product.image || "/placeholder.svg"}
-                alt={language === "ar" ? product.alt_ar : product.alt_en}
+                alt={language === "ar" ? product.description_ar : product.description_en}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -143,10 +103,14 @@ export default function ProductsSection() {
         <Link href="/products">
           <Button className="bg-primary hover:bg-primary-dark text-white">
             {language === "ar" ? "جميع المنتجات" : "All Products"}
-            {language === "ar" ? <ChevronLeft className="ms-2 h-5 w-5" /> : <ChevronRight className="ms-2 h-5 w-5" />}
+            {language === "ar" ? (
+              <ChevronLeft className="ms-2 h-5 w-5" />
+            ) : (
+              <ChevronRight className="ms-2 h-5 w-5" />
+            )}
           </Button>
         </Link>
       </div>
     </section>
-  )
+  );
 }
