@@ -198,6 +198,23 @@
     width: 50%; /* On smaller screens, show 2 logos at a time */
   }
   .logo-track {
-    animation-duration: 15s;
+    /* Adjusted animation duration for a consistent speed on mobile */
+    animation-duration: 12.5s;
+  }
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+  @keyframes scroll-logos-revers {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
   }
 }
