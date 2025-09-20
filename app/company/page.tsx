@@ -3,6 +3,7 @@
 import { useLanguage } from "@/components/language-provider";
 import Footer from "@/components/footer";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function CompanyPage() {
   const { t, language } = useLanguage();
@@ -34,10 +35,8 @@ export default function CompanyPage() {
                 : "UPAL for aluminum and uPVC products was born a giant to become a solid landmark in the ever-evolving world of construction. We offer doors, windows, and aluminum and uPVC profiles with exquisite quality and a commitment to our valued customers' satisfaction. We work to build a trust that grows with you, meeting your desires by providing the latest and most advanced products. After years of being founded in Jeddah, Saudi Arabia, we can say that we are on the verge of a broad launch, keeping pace with every new update and development in the aluminum and uPVC industry. To reaffirm our principle of customer service and meeting their requirements, UPAL has introduced new styles and shapes in this industry to suit all tastes while maintaining the usual quality by using the latest equipment and tools. This is in addition to our experienced and well-trained technicians who use this precise equipment to produce products that meet the measurements and specifications requested by the customer."}
             </p>
           </div>
-          <div className="bg-muted rounded-lg h-64 flex items-center justify-center">
-            <span className="text-muted-foreground">
-              {language === "ar" ? "صورة الشركة" : "Company Image"}
-            </span>
+          <div className="rounded-lg h-64 items-center justify-center">
+            <Image src={"/logo-no-bg.jpg"} alt="company" width={500} height={500}/>
           </div>
         </div>
 

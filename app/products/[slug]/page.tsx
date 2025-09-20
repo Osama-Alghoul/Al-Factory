@@ -35,9 +35,9 @@ const products = [
     ],
     image: "/our_products/Al-windows.png?height=600&width=800",
     gallery: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "/our_products/windows_slug/windows1.webp?height=600&width=800",
+      "/our_products/windows_slug/windows2.webp?height=600&width=800",
+      "/our_products/windows_slug/windows3.jpg?height=600&width=800",
     ],
     slug: "aluminum-windows",
   },
@@ -123,11 +123,11 @@ const products = [
       "High durability and long lifespan",
       "Multiple options of colors and finishes",
     ],
-    image: "/placeholder.svg?height=600&width=800",
+    image: "/our_products/Al-kitchen.webp?height=600&width=800",
     gallery: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "/our_products/kitchen_slug/kitchen1.webp?height=600&width=800",
+      "/our_products/kitchen_slug/kitchen2.png?height=600&width=800",
+      "/our_products/kitchen_slug/kitchen3.webp?height=600&width=800",
     ],
     slug: "aluminum-kitchens",
   },
@@ -160,6 +160,36 @@ const products = [
       "/our_products/stairs_slug/stairs3.jpg?height=600&width=800",
     ],
     slug: "railings",
+  },
+  {
+    id: 6,
+    title_ar: "قواطع ألمنيوم",
+    title_en: "Aluminum Partitions",
+    description_ar:
+      "قواطع ألمنيوم للمكاتب والمساحات التجارية. تجمع قواطعنا بين الجمال والمتانة والأمان.",
+    description_en:
+      "Aluminum partitions for offices and commercial spaces. Our partitions combine beauty, durability, and safety.",
+    features_ar: [
+      "تصاميم عصرية وأنيقة",
+      "مقاومة للصدأ والتآكل",
+      "متانة عالية وأمان",
+      "سهولة التنظيف والصيانة",
+      "خيارات متعددة من الألوان والتشطيبات",
+    ],
+    features_en: [
+      "Modern and elegant designs",
+      "Resistant to rust and corrosion",
+      "High durability and safety",
+      "Easy to clean and maintain",
+      "Multiple options of colors and finishes",
+    ],
+    image: "/our_products/Al-partitions.webp?height=600&width=800",
+    gallery: [
+      "/our_products/partitions_slug/partitions1.webp?height=600&width=800",
+      "/our_products/partitions_slug/partitions2.png?height=600&width=800",
+      "/our_products/partitions_slug/partitions3.webp?height=600&width=800",
+    ],
+    slug: "aluminum-partitions",
   },
 ];
 

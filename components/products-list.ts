@@ -32,7 +32,7 @@ export const products = [
       title_en: "Aluminum Kitchens",
       description_ar: "مطابخ ألمنيوم عصرية وعملية بتصاميم مختلفة.",
       description_en: "Modern and practical aluminum kitchens with various designs.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/our_products/Al-kitchen.webp?height=600&width=800",
       slug: "aluminum-kitchens",
     },
     {
@@ -50,7 +50,7 @@ export const products = [
       title_en: "Aluminum Partitions",
       description_ar: "قواطع ألمنيوم للمكاتب والمساحات التجارية.",
       description_en: "Aluminum partitions for offices and commercial spaces.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/our_products/Al-partitions.webp?height=600&width=800",
       slug: "aluminum-partitions",
     },
   ]
