@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { sendEmail } from "@/lib/resend"
 
-export default function ContactSection() {
+export default function ContactSection({onFormSubmit}: any) {
   const { t, language } = useLanguage()
 
   function send(event: React.FormEvent<HTMLFormElement>) {
@@ -14,6 +14,7 @@ export default function ContactSection() {
     const email = formData.get("email") as string
     const message = formData.get("message") as string
     sendEmail(name, email, message);
+    onFormSubmit();
   }
 
   return (

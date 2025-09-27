@@ -13,7 +13,6 @@ import { useEffect } from "react"
 export default function Home() {
   const { language } = useLanguage()
 
-  // Set page title based on language
   useEffect(() => {
     document.title = language === "ar" ? "UPAL Systems | الصفحة الرئيسية" : "UPAL Systems | Home"
   }, [language])

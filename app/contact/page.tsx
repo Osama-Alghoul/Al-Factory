@@ -3,11 +3,13 @@
 import { useLanguage } from "@/components/language-provider";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { CustomAlert } from "@/components/ui/customAlert";
 
 export default function ContactPage() {
   const { t, language } = useLanguage();
+  const [open, setOpen] = useState(false);
 
   // Set page title based on language
   useEffect(() => {
@@ -17,11 +19,21 @@ export default function ContactPage() {
         : "Contact Us | UPAL Systems";
   }, [language]);
 
+  function onFormSubmit() {
+    setOpen(true);
+  }
+
   return (
     <main className="pt-20">
+      <CustomAlert
+        message="تم ارسال الرسالة بنجاح"
+        show={open}
+        onClose={() => setOpen(false)}
+        success
+      />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="max-w-[640px]">
-          <ContactSection />
+          <ContactSection onFormSubmit={onFormSubmit} />
         </div>
         <div className="flex flex-col justify-center">
           <div className="space-y-8">
@@ -47,7 +59,10 @@ export default function ContactPage() {
                   className={`text-lg font-semibold mb-1 ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
                 >
                   {t("footer.phone")}
-                  <a href="tel:+966920029291" className="text-primary"> +966920029291</a>
+                  <a href="tel:+966920029291" className="text-primary">
+                    {" "}
+                    +966920029291
+                  </a>
                 </h3>
               </div>
             </div>
@@ -61,8 +76,12 @@ export default function ContactPage() {
                   className={`text-lg font-semibold mb-1 ${language === "ar" ? "font-arabic-heading" : "font-english"}`}
                 >
                   {t("footer.email")}
-                  <a href="mailto:info@arabian-industry.com" className="text-primary">
-                    {" "}info@arabian-industry.com
+                  <a
+                    href="mailto:info@arabian-industry.com"
+                    className="text-primary"
+                  >
+                    {" "}
+                    info@arabian-industry.com
                   </a>
                 </h3>
               </div>
